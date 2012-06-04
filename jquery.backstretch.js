@@ -41,6 +41,8 @@
         if (settings.target == 'body'){
           // hack to acccount for iOS position:fixed shortcomings
           rootElement = ("onorientationchange" in window) ? $(document) : $(window);
+        } else if( typeof settings.target === "object"){
+          rootElement = settings.target;
         } else {
           rootElement = $(settings.target);
         }
